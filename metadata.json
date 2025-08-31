@@ -1,0 +1,35 @@
+{
+  "name": "Perfect Models Managementee",
+  "description": "Agence de mannequins leader au Gabon. Perfect Models Management forme et représente les talents de la mode de demain. Découvrez nos mannequins, services et événements.",
+  "pages": {
+    "/": {
+      "name": "Accueil | Perfect Models Management",
+      "description": "Agence de mannequins leader au Gabon. Perfect Models Management forme et représente les talents de la mode de demain. Découvrez nos mannequins, services et événements."
+    },
+    "/a-propos": {
+      "name": "À Propos | Perfect Models Management",
+      "description": "Découvrez l'histoire, la vision et les valeurs de Perfect Models Management. Apprenez-en plus sur notre mission de professionnaliser le mannequinat au Gabon."
+    },
+    "/mannequins": {
+      "name": "Mannequins | Perfect Models Management",
+      "description": "Parcourez le portfolio des mannequins de Perfect Models Management. Des visages uniques et des talents professionnels pour vos projets de mode, défilés et campagnes."
+    },
+    "/services": {
+      "name": "Services | Perfect Models Management",
+      "description": "Explorez la gamme complète de services de PMM : développement de carrière, formations de mannequinat, production photo/vidéo et organisation d'événements de mode."
+    },
+    "/evenements": {
+      "name": "Événements | Perfect Models Management",
+      "description": "Restez informé des événements de mode organisés par Perfect Models Management, incluant le célèbre Perfect Fashion Day, la vitrine des talents gabonais."
+    },
+    "/contact": {
+      "name": "Contact | Perfect Models Management",
+      "description": "Contactez Perfect Models Management pour toute collaboration, booking de mannequin ou partenariat. Notre agence est basée à Libreville, Gabon."
+    },
+    "/devenir-mannequin": {
+      "name": "Devenir Mannequin | Perfect Models Management",
+      "description": "Postulez pour rejoindre Perfect Models Management. Soumettez votre candidature via notre formulaire en ligne et lancez votre carrière de mannequin au Gabon."
+    }
+  },
+  "requestFramePermissions": []
+}
