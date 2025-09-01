@@ -41,14 +41,48 @@ const BecomeModelPage: React.FC = () => {
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, files: inputFiles } = e.target;
         if (inputFiles && inputFiles.length > 0) {
+            // Vérifier la taille du fichier (max 5MB)
+            if (inputFiles[0].size > 5 * 1024 * 1024) {
+                setStatus({ type: 'error', message: `Le fichier ${inputFiles[0].name} dépasse la taille maximale de 5MB.` });
+                e.target.value = ''; // Réinitialiser l'input file
+                return;
+            }
             setFiles(prev => ({ ...prev, [name]: inputFiles[0] }));
         }
     };
     
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (!formData.consent || !files.headshot || !files.fullBody || !files.profile) {
-            setStatus({ type: 'error', message: 'Veuillez remplir tous les champs obligatoires, télécharger les 3 photos et accepter les conditions.' });
+        
+        // Validation des champs obligatoires
+        const requiredFields = [
+            'lastName', 'firstName', 'birthDate', 'email', 'phone', 
+            'height', 'shoeSize', 'city'
+        ];
+        
+        const missingFields = requiredFields.filter(field => !formData[field as keyof typeof formData]);
+        
+        if (missingFields.length > 0) {
+            setStatus({ 
+                type: 'error', 
+                message: `Veuillez remplir tous les champs obligatoires : ${missingFields.join(', ').replace(/([A-Z])/g, ' $1').toLowerCase()}` 
+            });
+            return;
+        }
+        
+        if (!files.headshot || !files.fullBody || !files.profile) {
+            setStatus({ 
+                type: 'error', 
+                message: 'Veuillez télécharger les 3 photos requises : portrait, en pied et profil.' 
+            });
+            return;
+        }
+        
+        if (!formData.consent) {
+            setStatus({ 
+                type: 'error', 
+                message: 'Veuvez accepter les conditions de traitement des données.' 
+            });
             return;
         }
         setLoading(true);
@@ -148,9 +182,45 @@ const BecomeModelPage: React.FC = () => {
                         <legend className="text-2xl font-serif text-brand-gold mb-6 border-b border-brand-gold/20 pb-2 w-full">Photos</legend>
                         <p className="text-gray-400 mb-6 text-sm">Veuillez fournir des photos récentes, claires, sans maquillage et sans retouches. Fichiers acceptés : JPG, PNG. Taille max : 5Mo.</p>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <div><label htmlFor="headshot" className={labelStyle}>Portrait (face){requiredSpan}</label><input type="file" name="headshot" id="headshot" required className={inputStyle} accept="image/png, image/jpeg" onChange={handleFileChange} /></div>
-                            <div><label htmlFor="fullBody" className={labelStyle}>En pied (face){requiredSpan}</label><input type="file" name="fullBody" id="fullBody" required className={inputStyle} accept="image/png, image/jpeg" onChange={handleFileChange}/></div>
-                            <div><label htmlFor="profile" className={labelStyle}>Profil (côté){requiredSpan}</label><input type="file" name="profile" id="profile" required className={inputStyle} accept="image/png, image/jpeg" onChange={handleFileChange}/></div>
+                            <div>
+                                <label htmlFor="headshot" className={labelStyle}>Portrait (face){requiredSpan}</label>
+                                <input 
+                                    type="file" 
+                                    name="headshot" 
+                                    id="headshot" 
+                                    required 
+                                    className={`${inputStyle} ${!files.headshot ? 'border-red-500' : 'border-gray-600'}`} 
+                                    accept="image/png, image/jpeg" 
+                                    onChange={handleFileChange} 
+                                />
+                                {files.headshot && <p className="text-xs text-green-400 mt-1">Fichier sélectionné : {files.headshot.name}</p>}
+                            </div>
+                            <div>
+                                <label htmlFor="fullBody" className={labelStyle}>En pied (face){requiredSpan}</label>
+                                <input 
+                                    type="file" 
+                                    name="fullBody" 
+                                    id="fullBody" 
+                                    required 
+                                    className={`${inputStyle} ${!files.fullBody ? 'border-red-500' : 'border-gray-600'}`} 
+                                    accept="image/png, image/jpeg" 
+                                    onChange={handleFileChange}
+                                />
+                                {files.fullBody && <p className="text-xs text-green-400 mt-1">Fichier sélectionné : {files.fullBody.name}</p>}
+                            </div>
+                            <div>
+                                <label htmlFor="profile" className={labelStyle}>Profil (côté){requiredSpan}</label>
+                                <input 
+                                    type="file" 
+                                    name="profile" 
+                                    id="profile" 
+                                    required 
+                                    className={`${inputStyle} ${!files.profile ? 'border-red-500' : 'border-gray-600'}`} 
+                                    accept="image/png, image/jpeg" 
+                                    onChange={handleFileChange}
+                                />
+                                {files.profile && <p className="text-xs text-green-400 mt-1">Fichier sélectionné : {files.profile.name}</p>}
+                            </div>
                         </div>
                     </fieldset>
 
@@ -160,10 +230,20 @@ const BecomeModelPage: React.FC = () => {
                         <textarea name="experience" id="experience" rows={4} className={inputStyle} placeholder="Décrivez brièvement votre expérience si vous en avez." value={formData.experience} onChange={handleInputChange}></textarea>
                     </div>
 
-                    <div className="flex items-center">
-                        <input type="checkbox" name="consent" id="consent" required className="h-4 w-4 text-brand-gold bg-brand-dark border-gray-600 focus:ring-brand-gold" checked={formData.consent} onChange={handleInputChange} />
+                    <div className={`flex items-start p-4 rounded-md ${!formData.consent && status?.type === 'error' && status.message.includes('conditions') ? 'bg-red-900/20 border border-red-500/50' : 'bg-gray-800/50'}`}>
+                        <input 
+                            type="checkbox" 
+                            name="consent" 
+                            id="consent" 
+                            required 
+                            className="h-4 w-4 text-brand-gold bg-brand-dark border-gray-600 focus:ring-brand-gold mt-1" 
+                            checked={formData.consent} 
+                            onChange={handleInputChange} 
+                        />
                         <label htmlFor="consent" className="ml-3 block text-sm text-gray-300">
-                            Je confirme que les informations sont exactes et j'autorise Perfect Models Management à me contacter.{requiredSpan}
+                            Je confirme que les informations fournies sont exactes et j'autorise Perfect Models Management à me contacter via les coordonnées fournies. 
+                            Je comprends que mes données personnelles seront utilisées uniquement dans le cadre de ma candidature et conformément à la politique de confidentialité de l'agence.
+                            {requiredSpan}
                         </label>
                     </div>
 

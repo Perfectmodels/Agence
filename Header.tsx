@@ -4,13 +4,11 @@ import React, { useState } from 'react';
 import * as ReactRouterDOM from 'react-router-dom';
 import { MenuIcon } from './components/icons/MenuIcon';
 import { CloseIcon } from './components/icons/CloseIcon';
-import { put } from "@vercel/blob";
-
-const { url } = await put('articles/blob.txt', 'Hello World!', { access: 'public' });
 const navLinks = [
   { path: '/', label: 'Accueil' },
   { path: '/a-propos', label: 'À Propos' },
   { path: '/mannequins', label: 'Mannequins' },
+  { path: '/stylistes', label: 'Perfect Fashion Day' },
   { path: '/services', label: 'Services' },
   { path: '/evenements', label: 'Événements' },
   { path: '/focus-mode-241', label: 'Focus Mode 241' },

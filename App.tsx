@@ -13,9 +13,20 @@ import ContactPage from './pages/ContactPage';
 import BecomeModelPage from './pages/BecomeModelPage';
 import FocusModePage from './pages/FocusModePage';
 import ArticleDetailPage from './pages/ArticleDetailPage';
+import TestConnection from './components/TestConnection';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 // Admin Pages
 import AdminLayout from './pages/admin/AdminLayout';
+
+// Test Connection Page
+const TestConnectionPage = () => (
+  <div className="min-h-screen bg-gray-100 py-12 px-4">
+    <div className="max-w-7xl mx-auto">
+      <TestConnection />
+    </div>
+  </div>
+);
 
 const PublicLayout: React.FC = () => (
   <div className="flex flex-col min-h-screen bg-brand-dark">
@@ -54,6 +65,8 @@ const App: React.FC = () => {
           <ReactRouterDOM.Route path="focus-mode-241" element={<FocusModePage />} />
           {/* FIX: Use namespace import for react-router-dom to resolve module export errors. */}
           <ReactRouterDOM.Route path="focus-mode-241/:articleId" element={<ArticleDetailPage />} />
+          {/* FIX: Use namespace import for react-router-dom to resolve module export errors. */}
+          <ReactRouterDOM.Route path="/test-connection" element={<TestConnectionPage />} />
           {/* FIX: Use namespace import for react-router-dom to resolve module export errors. */}
           <ReactRouterDOM.Route path="contact" element={<ContactPage />} />
           {/* FIX: Use namespace import for react-router-dom to resolve module export errors. */}
