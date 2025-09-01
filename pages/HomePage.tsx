@@ -32,13 +32,6 @@ const HomePage: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-brand-dark/50"></div>
         </div>
         <div className="relative z-10 p-6 w-full max-w-6xl mx-auto">
-          <div className="mb-8 animate-fade-in-down">
-            <img 
-              src="/logo-pmm.png" 
-              alt="Perfect Models Management" 
-              className="h-24 md:h-32 mx-auto mb-6"
-            />
-          </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 animate-fade-in-down">
             L'Excellence de la Mode <span className="text-brand-gold">Gabonaise</span>
           </h1>
