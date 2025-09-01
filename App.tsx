@@ -15,7 +15,7 @@ import FocusModePage from './pages/FocusModePage';
 import ArticleDetailPage from './pages/ArticleDetailPage';
 import TestConnection from './components/TestConnection';
 import { SpeedInsights } from "@vercel/speed-insights/next"
-
+import { Analytics } from "@vercel/analytics/next"
 // Admin Pages
 import AdminLayout from './pages/admin/AdminLayout';
 
