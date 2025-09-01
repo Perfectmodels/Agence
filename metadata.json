@@ -22,6 +22,14 @@
       "name": "Événements | Perfect Models Management",
       "description": "Restez informé des événements de mode organisés par Perfect Models Management, incluant le célèbre Perfect Fashion Day, la vitrine des talents gabonais."
     },
+    "/focus-mode-241": {
+      "name": "Focus Mode 241 | Le Magazine de PMM",
+      "description": "Le magazine de Perfect Models Management. Articles, interviews et analyses sur la mode au Gabon, le mannequinat et les talents de notre agence."
+    },
+    "/focus-mode-241/:articleId": {
+      "name": "Article | Focus Mode 241",
+      "description": "Lisez nos articles exclusifs sur le monde de la mode et du mannequinat au Gabon."
+    },
     "/contact": {
       "name": "Contact | Perfect Models Management",
       "description": "Contactez Perfect Models Management pour toute collaboration, booking de mannequin ou partenariat. Notre agence est basée à Libreville, Gabon."

@@ -8,6 +8,7 @@ import { ShieldCheckIcon } from '../components/icons/ShieldCheckIcon';
 import { ScaleIcon } from '../components/icons/ScaleIcon';
 import { StarIcon } from '../components/icons/StarIcon';
 import { GlobeAltIcon } from '../components/icons/GlobeAltIcon';
+import AnimatedSection from '../components/AnimatedSection';
 
 const values = [
     { title: "Professionnalisme", description: "Une approche rigoureuse et structurée à chaque étape de notre travail.", icon: <ShieldCheckIcon /> },
@@ -42,21 +43,25 @@ const AboutPage: React.FC = () => {
             {/* Timeline */}
             <div className="absolute top-0 bottom-0 left-0 w-1 bg-brand-gold/20 rounded"></div>
             {timeline.map((item, index) => (
-                <div key={index} className="mb-12 relative">
-                    <div className="absolute -left-11 top-0 w-8 h-8 bg-brand-dark border-2 border-brand-gold rounded-full flex items-center justify-center">
-                        <div className="w-4 h-4 bg-brand-gold rounded-full"></div>
-                    </div>
-                    <h3 className="text-2xl font-serif text-brand-gold mb-2">{item.year}</h3>
-                    <p className="text-gray-300">{item.event}</p>
-                </div>
+                <AnimatedSection key={index} delay={index * 150}>
+                  <div className="mb-12 relative">
+                      <div className="absolute -left-11 top-0 w-8 h-8 bg-brand-dark border-2 border-brand-gold rounded-full flex items-center justify-center">
+                          <div className="w-4 h-4 bg-brand-gold rounded-full"></div>
+                      </div>
+                      <h3 className="text-2xl font-serif text-brand-gold mb-2">{item.year}</h3>
+                      <p className="text-gray-300">{item.event}</p>
+                  </div>
+                </AnimatedSection>
             ))}
           </div>
           <div className="order-1 md:order-2">
-            <img 
-              src="https://i.ibb.co/mRKn421/ceo.jpg"
-              alt="Louis Parfait Asseko, fondateur de PMM"
-              className="rounded-lg shadow-xl object-cover w-full h-auto aspect-[4/5]"
-            />
+            <AnimatedSection>
+              <img 
+                src="https://i.ibb.co/mRKn421/ceo.jpg"
+                alt="Louis Parfait Asseko, fondateur de PMM"
+                className="rounded-lg shadow-xl object-cover w-full h-auto aspect-[4/5]"
+              />
+            </AnimatedSection>
           </div>
         </div>
       </SectionWrapper>
@@ -67,12 +72,12 @@ const AboutPage: React.FC = () => {
         className="bg-gray-900/50"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-          {values.map(value => (
-            <div key={value.title} className="bg-brand-dark p-6 rounded-lg border border-brand-gold/20 text-center">
+          {values.map((value, index) => (
+            <AnimatedSection key={value.title} delay={index * 100} className="bg-brand-dark p-6 rounded-lg border border-brand-gold/20 text-center">
               <div className="text-brand-gold mx-auto mb-4 w-16 h-16 flex items-center justify-center rounded-full bg-brand-gold/10">{value.icon}</div>
               <h3 className="text-2xl font-serif text-white mb-3">{value.title}</h3>
               <p className="text-gray-400 text-sm">{value.description}</p>
-            </div>
+            </AnimatedSection>
           ))}
         </div>
       </SectionWrapper>
@@ -82,8 +87,9 @@ const AboutPage: React.FC = () => {
         subtitle="La reconnaissance du talent, du travail et de la discipline."
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-            {distinctions.map(distinction => (
-                <div key={distinction.name} className="group relative overflow-hidden rounded-lg shadow-lg">
+            {distinctions.map((distinction, index) => (
+              <AnimatedSection key={distinction.name} delay={index * 100}>
+                <div className="group relative overflow-hidden rounded-lg shadow-lg">
                     <img src={distinction.imageUrl} alt={distinction.name} className="w-full h-full object-cover aspect-[4/5]"/>
                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
                     <div className="absolute bottom-0 left-0 p-4">
@@ -91,6 +97,7 @@ const AboutPage: React.FC = () => {
                         <p className="text-brand-gold text-sm">{distinction.titles}</p>
                     </div>
                 </div>
+              </AnimatedSection>
             ))}
         </div>
       </SectionWrapper>
@@ -101,13 +108,13 @@ const AboutPage: React.FC = () => {
         className="bg-gray-900/50"
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {teamMembers.map(member => (
-                <div key={member.name} className="text-center">
+            {teamMembers.map((member, index) => (
+                <AnimatedSection key={member.name} delay={index * 100} className="text-center">
                     <img src={member.imageUrl} alt={member.name} className="w-48 h-48 rounded-full mx-auto mb-4 object-cover border-4 border-brand-gold/50"/>
                     <h3 className="text-2xl font-serif text-white">{member.name}</h3>
                     <p className="text-brand-gold mb-2">{member.role}</p>
                     <p className="text-gray-400 text-sm">{member.bio}</p>
-                </div>
+                </AnimatedSection>
             ))}
         </div>
       </SectionWrapper>

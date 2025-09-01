@@ -1,7 +1,11 @@
 
 import React, { useState } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
-import { fileToBase64 } from '../utils/fileToBase64';
+
+// Remarque sur la sécurité :
+// La logique d'envoi d'email a été déplacée vers un endpoint backend sécurisé (`/api/submit-application`).
+// Cela empêche l'exposition de clés API côté client, ce qui est une pratique de sécurité essentielle.
+// Le backend sera responsable de la construction de l'email et de l'envoi via un service tiers (ex: Brevo).
 
 const BecomeModelPage: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -51,67 +55,36 @@ const BecomeModelPage: React.FC = () => {
         setStatus(null);
 
         try {
-            const API_KEY = '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';
+            const submissionData = new FormData();
+            
+            // Ajouter les données du formulaire
+            for (const [key, value] of Object.entries(formData)) {
+                submissionData.append(key, String(value));
+            }
 
-            // Conversion des fichiers en base64
-            const headshotBase64 = await fileToBase64(files.headshot);
-            const fullBodyBase64 = await fileToBase64(files.fullBody);
-            const profileBase64 = await fileToBase64(files.profile);
-
-            const emailHtmlBody = `
-                <h1>Nouvelle Candidature Mannequin</h1>
-                <p>Une nouvelle candidature a été soumise via le site web.</p>
-                <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
-                    <tr style="background-color: #f2f2f2;"><td colspan="2"><strong>Informations Personnelles</strong></td></tr>
-                    <tr><td style="width: 30%;"><strong>Nom</strong></td><td>${formData.lastName}</td></tr>
-                    <tr><td><strong>Prénom</strong></td><td>${formData.firstName}</td></tr>
-                    <tr><td><strong>Date de Naissance</strong></td><td>${formData.birthDate}</td></tr>
-                    <tr><td><strong>Email</strong></td><td><a href="mailto:${formData.email}">${formData.email}</a></td></tr>
-                    <tr><td><strong>Téléphone</strong></td><td><a href="tel:${formData.phone}">${formData.phone}</a></td></tr>
-                    <tr><td><strong>Ville / Pays</strong></td><td>${formData.city}, ${formData.country}</td></tr>
-                    <tr style="background-color: #f2f2f2;"><td colspan="2"><strong>Mensurations</strong></td></tr>
-                    <tr><td><strong>Taille</strong></td><td>${formData.height} cm</td></tr>
-                    <tr><td><strong>Poids</strong></td><td>${formData.weight} kg</td></tr>
-                    <tr><td><strong>Poitrine</strong></td><td>${formData.chest} cm</td></tr>
-                    <tr><td><strong>Taille (vêtement)</strong></td><td>${formData.waist} cm</td></tr>
-                    <tr><td><strong>Hanches</strong></td><td>${formData.hips} cm</td></tr>
-                    <tr><td><strong>Pointure</strong></td><td>${formData.shoeSize}</td></tr>
-                    <tr><td><strong>Couleur des yeux</strong></td><td>${formData.eyeColor}</td></tr>
-                    <tr><td><strong>Couleur des cheveux</strong></td><td>${formData.hairColor}</td></tr>
-                    <tr style="background-color: #f2f2f2;"><td colspan="2"><strong>Expérience</strong></td></tr>
-                    <tr><td colspan="2">${formData.experience || 'Aucune'}</td></tr>
-                </table>
-            `;
-
-            const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+            // Ajouter les fichiers
+            if (files.headshot) submissionData.append('headshot', files.headshot);
+            if (files.fullBody) submissionData.append('fullBody', files.fullBody);
+            if (files.profile) submissionData.append('profile', files.profile);
+            
+            // NOTE: C'est un placeholder pour un véritable endpoint d'API backend.
+            // Dans une application réelle, vous remplacerez ceci par l'URL de votre fonction serverless ou de votre serveur backend.
+            const response = await fetch('/api/submit-application', {
                 method: 'POST',
-                headers: {
-                    'accept': 'application/json',
-                    'api-key': API_KEY,
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify({
-                    sender: { name: "Site PMM Candidature", email: "noreply@perfectmodels.ga" },
-                    to: [{ email: "perfectmodels.ga@gmail.com", name: "Perfect Models Management" }],
-                    replyTo: { email: formData.email, name: `${formData.firstName} ${formData.lastName}` },
-                    subject: `Nouvelle Candidature: ${formData.firstName} ${formData.lastName}`,
-                    htmlContent: emailHtmlBody,
-                    attachment: [
-                        { content: headshotBase64, name: `headshot_${files.headshot.name}` },
-                        { content: fullBodyBase64, name: `fullbody_${files.fullBody.name}` },
-                        { content: profileBase64, name: `profile_${files.profile.name}` },
-                    ]
-                })
+                body: submissionData,
+                // Les en-têtes (comme Content-Type) sont automatiquement définis par le navigateur pour FormData
             });
 
             if (!response.ok) {
+                 // Essayer de parser l'erreur JSON, sinon utiliser le statut textuel
                  const errorData = await response.json().catch(() => null);
                  const errorMessage = errorData?.message || response.statusText;
-                 throw new Error(`Erreur ${response.status}: ${errorMessage}`);
+                 throw new Error(`Erreur du serveur (${response.status}): ${errorMessage}`);
             }
 
             setStatus({ type: 'success', message: 'Votre candidature a été envoyée avec succès ! Nous vous contacterons bientôt.' });
-            // Reset form
+            
+            // Réinitialiser le formulaire
             setFormData({
                 lastName: '', firstName: '', birthDate: '', email: '', phone: '',
                 height: '', weight: '', chest: '', waist: '', hips: '', shoeSize: '',
@@ -122,8 +95,9 @@ const BecomeModelPage: React.FC = () => {
 
         } catch (error) {
             console.error("Erreur de soumission:", error);
+            // Afficher un message d'erreur plus convivial
             const errorMessage = error instanceof Error ? error.message : 'Une erreur inconnue est survenue.';
-            setStatus({ type: 'error', message: `Une erreur est survenue. ${errorMessage}. Veuillez réessayer plus tard ou nous contacter directement.` });
+            setStatus({ type: 'error', message: `Échec de l'envoi de la candidature. ${errorMessage}. Veuillez réessayer.` });
         } finally {
             setLoading(false);
         }
@@ -196,7 +170,7 @@ const BecomeModelPage: React.FC = () => {
                     {/* Submission */}
                     <div>
                         {status && (
-                            <div className={`p-4 mb-4 rounded-md text-center ${status.type === 'success' ? 'bg-green-900/50 text-green-300' : 'bg-red-900/50 text-red-300'}`}>
+                            <div role="alert" className={`p-4 mb-4 rounded-md text-center ${status.type === 'success' ? 'bg-green-900/50 text-green-300' : 'bg-red-900/50 text-red-300'}`}>
                                 {status.message}
                             </div>
                         )}

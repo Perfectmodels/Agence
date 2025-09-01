@@ -1,4 +1,3 @@
-
 import type { Model } from '../types';
 
 export const models: Model[] = [
@@ -14,6 +13,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/7FcrvPf/AJC-4643.jpg',
     gallery: ['https://i.ibb.co/7FcrvPf/AJC-4643.jpg', 'https://i.ibb.co/N1kYm5v/AJC-4638.jpg', 'https://i.ibb.co/zZ9M5zY/AJC-4654.jpg'],
     bio: 'Rosnel est un mannequin charismatique avec une présence scénique imposante. Sa passion pour la mode se reflète dans chaque défilé et shooting, où il apporte une énergie unique et un professionnalisme exemplaire.',
+    category: ['Podium', 'Photo'],
   },
   {
     id: 'medame-mba-mirabelle',
@@ -27,6 +27,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/Pv0JsH4/AJC-4593.jpg',
     gallery: ['https://i.ibb.co/Pv0JsH4/AJC-4593.jpg', 'https://i.ibb.co/wYdYx6k/AJC-4581.jpg', 'https://i.ibb.co/RSCk9xM/AJC-4606.jpg'],
     bio: "Mirabelle allie élégance naturelle et polyvalence. Capable de s'adapter à des styles très variés, de la haute couture au prêt-à-porter, elle captive l'objectif avec son regard intense et sa grâce innée.",
+    category: ['Podium', 'Photo', 'Publicité'],
   },
   {
     id: 'benga-eneme-desiree-sadia-christelle',
@@ -40,6 +41,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/1t6zbJm/484135904-630949926456019-7069478021622378576-n.jpg',
     gallery: ['https://i.ibb.co/1t6zbJm/484135904-630949926456019-7069478021622378576-n.jpg', 'https://picsum.photos/800/1200?random=4a', 'https://picsum.photos/800/1200?random=4b'],
     bio: "Sadia est une force créative, connue pour son style audacieux et son attitude confiante. Elle n'a pas peur d'expérimenter et apporte une touche de modernité à chaque projet auquel elle participe.",
+    category: ['Photo', 'Publicité'],
   },
   {
     id: 'okamba-pembe-annie-flora',
@@ -53,6 +55,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/4n4W615/AJC-4537.jpg',
     gallery: ['https://i.ibb.co/4n4W615/AJC-4537.jpg', 'https://i.ibb.co/mH0k5qM/AJC-4550.jpg', 'https://i.ibb.co/Jq0R2W2/AJC-4562.jpg'],
     bio: 'Avec sa silhouette sculpturale et son port de reine, Flora excelle dans les créations de haute couture. Son professionnalisme et sa discipline en font un choix privilégié pour les designers exigeants.',
+    category: ['Podium', 'Photo'],
   },
   {
     id: 'mekui-messono-lea-daniel',
@@ -66,6 +69,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/1GgZSPc/MG-9621-2.jpg',
     gallery: ['https://i.ibb.co/1GgZSPc/MG-9621-2.jpg', 'https://picsum.photos/800/1200?random=8a', 'https://picsum.photos/800/1200?random=8b'],
     bio: "Lea Daniel est un talent brut plein de promesses. Son énergie juvénile et sa capacité d'apprentissage rapide lui permettent de s'épanouir et de surprendre à chaque nouvelle opportunité.",
+    category: ['Photo'],
   },
   {
     id: 'bonoukpo-anani-donatien',
@@ -79,6 +83,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/b5LgVZg/DSC-0090.jpg',
     gallery: ['https://i.ibb.co/b5LgVZg/DSC-0090.jpg', 'https://i.ibb.co/wQzT2Zg/DSC-0091.jpg', 'https://i.ibb.co/L51D9zG/DSC-0101.jpg'],
     bio: 'Donatien combine une allure athlétique et une élégance naturelle. Il est particulièrement apprécié pour les campagnes de sportswear de luxe et les éditoriaux de mode masculine.',
+    category: ['Photo', 'Publicité'],
   },
   {
     id: 'kendra-mebiame',
@@ -92,6 +97,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/ksdXSfp/474134983-590912627126416-4665446951991920838-n.jpg',
     gallery: ['https://i.ibb.co/ksdXSfp/474134983-590912627126416-4665446951991920838-n.jpg', 'https://picsum.photos/800/1200?random=10a', 'https://picsum.photos/800/1200?random=10b'],
     bio: 'Élue Meilleur Mannequin Espoir, Kendra est le visage de la nouvelle génération. Sa fraîcheur et sa capacité à incarner des émotions complexes la rendent unique.',
+    category: ['Podium', 'Photo'],
   },
   {
     id: 'noemie-kim',
@@ -105,6 +111,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/mCcD1Gf/DSC-0272.jpg',
     gallery: ['https://i.ibb.co/mCcD1Gf/DSC-0272.jpg', 'https://picsum.photos/800/1200?random=11a', 'https://picsum.photos/800/1200?random=11b'],
     bio: "Mannequin phare de l'agence, Noémie est une icône de style. Son expérience et sa maîtrise des podiums en font une source d'inspiration pour les autres mannequins.",
+    category: ['Podium', 'Photo', 'Publicité'],
   },
   {
     id: 'diane-vanessa',
@@ -115,6 +122,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/TBt9FBS/AJC-4630.jpg',
     gallery: ['https://i.ibb.co/TBt9FBS/AJC-4630.jpg', 'https://picsum.photos/800/1200?random=dv1', 'https://picsum.photos/800/1200?random=dv2'],
     bio: 'Un talent prometteur avec une présence captivante, prête à laisser sa marque dans le monde de la mode.',
+    category: ['Podium'],
   },
   {
     id: 'cassandra',
@@ -125,6 +133,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/LGYkqzc/AJC-4601.jpg',
     gallery: ['https://i.ibb.co/LGYkqzc/AJC-4601.jpg', 'https://picsum.photos/800/1200?random=c1', 'https://picsum.photos/800/1200?random=c2'],
     bio: 'Un talent prometteur avec une présence captivante, prête à laisser sa marque dans le monde de la mode.',
+    category: ['Photo', 'Publicité'],
   },
   {
     id: 'hurielle',
@@ -135,6 +144,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/R4VNc7N/AJC-4528.jpg',
     gallery: ['https://i.ibb.co/R4VNc7N/AJC-4528.jpg', 'https://picsum.photos/800/1200?random=h1', 'https://picsum.photos/800/1200?random=h2'],
     bio: 'Un talent prometteur avec une présence captivante, prête à laisser sa marque dans le monde de la mode.',
+    category: ['Podium', 'Photo'],
   },
   {
     id: 'lesly',
@@ -145,6 +155,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/B5ZY82C/DSC-0312.jpg',
     gallery: ['https://i.ibb.co/B5ZY82C/DSC-0312.jpg', 'https://picsum.photos/800/1200?random=l1', 'https://picsum.photos/800/1200?random=l2'],
     bio: 'Un talent prometteur avec une présence captivante, prête à laisser sa marque dans le monde de la mode.',
+    category: ['Photo'],
   },
   {
     id: 'patricia',
@@ -155,6 +166,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/dw0rSZw/DSC-0220.jpg',
     gallery: ['https://i.ibb.co/dw0rSZw/DSC-0220.jpg', 'https://picsum.photos/800/1200?random=p1', 'https://picsum.photos/800/1200?random=p2'],
     bio: 'Un talent prometteur avec une présence captivante, prête à laisser sa marque dans le monde de la mode.',
+    category: ['Podium'],
   },
   {
     id: 'khelany',
@@ -165,6 +177,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/bgW2TwP/DSC-0457.jpg',
     gallery: ['https://i.ibb.co/bgW2TwP/DSC-0457.jpg', 'https://picsum.photos/800/1200?random=k1', 'https://picsum.photos/800/1200?random=k2'],
     bio: 'Un talent prometteur avec une présence captivante, prête à laisser sa marque dans le monde de la mode.',
+    category: ['Photo'],
   },
   {
     id: 'cegolaine',
@@ -175,6 +188,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/LzrGBNy/DSC-0402.jpg',
     gallery: ['https://i.ibb.co/LzrGBNy/DSC-0402.jpg', 'https://picsum.photos/800/1200?random=ceg1', 'https://picsum.photos/800/1200?random=ceg2'],
     bio: 'Un talent prometteur avec une présence captivante, prête à laisser sa marque dans le monde de la mode.',
+    category: ['Podium'],
   },
   {
     id: 'darlyne',
@@ -185,6 +199,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/7xwhF4Q/DSC-0203.jpg',
     gallery: ['https://i.ibb.co/7xwhF4Q/DSC-0203.jpg', 'https://picsum.photos/800/1200?random=dar1', 'https://picsum.photos/800/1200?random=dar2'],
     bio: 'Un talent prometteur avec une présence captivante, prête à laisser sa marque dans le monde de la mode.',
+    category: ['Publicité'],
   },
   {
     id: 'davy',
@@ -195,6 +210,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/LD3Bg4R/DSC-0297.jpg',
     gallery: ['https://i.ibb.co/LD3Bg4R/DSC-0297.jpg', 'https://picsum.photos/800/1200?random=dav1', 'https://picsum.photos/800/1200?random=dav2'],
     bio: 'Un talent prometteur avec une présence captivante, prêt à laisser sa marque dans le monde de la mode.',
+    category: ['Podium', 'Publicité'],
   },
   {
     id: 'stecy',
@@ -205,6 +221,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/rGztyrP/1L4A9705.jpg',
     gallery: ['https://i.ibb.co/rGztyrP/1L4A9705.jpg', 'https://picsum.photos/800/1200?random=s1', 'https://picsum.photos/800/1200?random=s2'],
     bio: 'Un talent prometteur avec une présence captivante, prête à laisser sa marque dans le monde de la mode.',
+    category: ['Photo'],
   },
   {
     id: 'osee',
@@ -215,6 +232,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/7tk4pKv/474620403-594457843438561-7313394165363117491-n.jpg',
     gallery: ['https://i.ibb.co/7tk4pKv/474620403-594457843438561-7313394165363117491-n.jpg', 'https://picsum.photos/800/1200?random=o1', 'https://picsum.photos/800/1200?random=o2'],
     bio: 'Un talent prometteur avec une présence captivante, prêt à laisser sa marque dans le monde de la mode.',
+    category: ['Podium', 'Photo'],
   },
   {
     id: 'danara',
@@ -225,6 +243,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/mCwz8JY/483828066-629699233247755-7611737956009481678-n.jpg',
     gallery: ['https://i.ibb.co/mCwz8JY/483828066-629699233247755-7611737956009481678-n.jpg', 'https://picsum.photos/800/1200?random=dan1', 'https://picsum.photos/800/1200?random=dan2'],
     bio: 'Un talent prometteur avec une présence captivante, prête à laisser sa marque dans le monde de la mode.',
+    category: ['Photo', 'Publicité'],
   },
   {
     id: 'moustapha',
@@ -235,6 +254,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/C5Z1N6Z/481335188-618392171045128-1143329793191383014-n.jpg',
     gallery: ['https://i.ibb.co/C5Z1N6Z/481335188-618392171045128-1143329793191383014-n.jpg', 'https://picsum.photos/800/1200?random=m1', 'https://picsum.photos/800/1200?random=m2'],
     bio: 'Un talent prometteur avec une présence captivante, prêt à laisser sa marque dans le monde de la mode.',
+    category: ['Publicité'],
   },
   {
     id: 'noe-maks',
@@ -245,16 +265,21 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/4ncX4Br/481054309-617829164434762-185712014482056867-n.jpg',
     gallery: ['https://i.ibb.co/4ncX4Br/481054309-617829164434762-185712014482056867-n.jpg', 'https://picsum.photos/800/1200?random=nm1', 'https://picsum.photos/800/1200?random=nm2'],
     bio: 'Un talent prometteur avec une présence captivante, prêt à laisser sa marque dans le monde de la mode.',
+    category: ['Photo'],
   },
   {
     id: 'aj-caremela',
     name: 'AJ Caremela',
-    age: 23,
+    email: 'aj.caremela@example.com',
+    phone: '+241 77 11 22 34',
+    age: 24,
     height: '1m78',
     gender: 'Femme',
+    location: 'Libreville, Centre-ville',
     imageUrl: 'https://i.ibb.co/WpyDyqG/480764039-617423107808701-5578356664870683876-n.jpg',
-    gallery: ['https://i.ibb.co/WpyDyqG/480764039-617423107808701-5578356664870683876-n.jpg', 'https://picsum.photos/800/1200?random=aj1', 'https://picsum.photos/800/1200?random=aj2'],
-    bio: 'Un talent prometteur avec une présence captivante, prête à laisser sa marque dans le monde de la mode.',
+    gallery: ['https://i.ibb.co/WpyDyqG/480764039-617423107808701-5578356664870683876-n.jpg', 'https://i.ibb.co/QjZ5bJc/pexels-photo-3765109.jpg', 'https://i.ibb.co/n7zS2XW/pexels-photo-322207.jpg'],
+    bio: "Reconnue pour son professionnalisme, AJ Caremela est une force de la nature sur les podiums. Son énergie électrisante et sa démarche puissante captivent l'attention. 'Chaque défilé est une performance, une histoire à raconter', dit-elle. Spécialisée dans la haute couture, elle a récemment été le visage de la dernière campagne du créateur Farel MD, une consécration de son travail acharné.",
+    category: ['Podium', 'Publicité', 'Photo'],
   },
   {
     id: 'eunice',
@@ -265,6 +290,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/8nq5gBT/485976709-640513238697791-5779836737383586501-n.jpg',
     gallery: ['https://i.ibb.co/8nq5gBT/485976709-640513238697791-5779836737383586501-n.jpg', 'https://picsum.photos/800/1200?random=e1', 'https://picsum.photos/800/1200?random=e2'],
     bio: 'Un talent prometteur avec une présence captivante, prête à laisser sa marque dans le monde de la mode.',
+    category: ['Photo'],
   },
   {
     id: 'sephora',
@@ -275,6 +301,7 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/kgdjvvN/DSC01394-Modifier.jpg',
     gallery: ['https://i.ibb.co/kgdjvvN/DSC01394-Modifier.jpg', 'https://picsum.photos/800/1200?random=sep1', 'https://picsum.photos/800/1200?random=sep2'],
     bio: 'Un talent prometteur avec une présence captivante, prête à laisser sa marque dans le monde de la mode.',
+    category: ['Podium', 'Photo'],
   },
   {
     id: 'merveille',
@@ -285,5 +312,6 @@ export const models: Model[] = [
     imageUrl: 'https://i.ibb.co/tnMZ3NJ/MG-0666.jpg',
     gallery: ['https://i.ibb.co/tnMZ3NJ/MG-0666.jpg', 'https://picsum.photos/800/1200?random=mer1', 'https://picsum.photos/800/1200?random=mer2'],
     bio: 'Un talent prometteur avec une présence captivante, prête à laisser sa marque dans le monde de la mode.',
+    category: ['Podium'],
   },
 ];

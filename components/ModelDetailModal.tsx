@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import type { Model } from '../types';
 import { CloseIcon } from './icons/CloseIcon';
 
@@ -10,22 +10,55 @@ interface ModelDetailModalProps {
 
 const ModelDetailModal: React.FC<ModelDetailModalProps> = ({ model, onClose }) => {
   const [activeImage, setActiveImage] = useState(model.imageUrl);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Reset active image when model changes
     setActiveImage(model.imageUrl);
   }, [model]);
   
-  // Handle Escape key press
+  // Handle Escape key press & Focus Trapping
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         onClose();
       }
     };
+    
+    const modalNode = modalRef.current;
+    if (!modalNode) return;
+
+    const focusableElements = modalNode.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    if (firstElement) {
+        firstElement.focus();
+    }
+
+    const handleTabKeyPress = (event: KeyboardEvent) => {
+        if (event.key === 'Tab') {
+            if (event.shiftKey) { // Shift+Tab
+                if (document.activeElement === firstElement) {
+                    lastElement.focus();
+                    event.preventDefault();
+                }
+            } else { // Tab
+                if (document.activeElement === lastElement) {
+                    firstElement.focus();
+                    event.preventDefault();
+                }
+            }
+        }
+    };
+
     window.addEventListener('keydown', handleKeyDown);
+    modalNode.addEventListener('keydown', handleTabKeyPress);
+    
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
+      modalNode.removeEventListener('keydown', handleTabKeyPress);
     };
   }, [onClose]);
 
@@ -38,6 +71,7 @@ const ModelDetailModal: React.FC<ModelDetailModalProps> = ({ model, onClose }) =
       aria-labelledby="model-name"
     >
       <div 
+        ref={modalRef}
         className="bg-brand-dark rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col md:flex-row overflow-hidden"
         onClick={e => e.stopPropagation()} // Prevent closing modal when clicking inside
       >
@@ -53,6 +87,7 @@ const ModelDetailModal: React.FC<ModelDetailModalProps> = ({ model, onClose }) =
                   key={index} 
                   onClick={() => setActiveImage(img)}
                   className={`w-16 h-20 rounded-md overflow-hidden focus:outline-none focus:ring-2 focus:ring-brand-gold ${activeImage === img ? 'ring-2 ring-brand-gold' : ''}`}
+                  aria-label={`Voir l'image ${index + 1}`}
                 >
                   <img src={img} alt={`Galerie ${index + 1}`} className="w-full h-full object-cover" />
                 </button>
@@ -62,7 +97,10 @@ const ModelDetailModal: React.FC<ModelDetailModalProps> = ({ model, onClose }) =
         </div>
 
         {/* Details */}
-        <div className="w-full md:w-1/2 p-8 overflow-y-auto">
+        <div className="relative w-full md:w-1/2 p-8 overflow-y-auto">
+           <button onClick={onClose} className="absolute top-4 right-4 text-white hover:text-brand-gold transition-colors z-10" aria-label="Fermer">
+            <CloseIcon />
+          </button>
           <h2 id="model-name" className="text-4xl font-serif text-white mb-2">{model.name}</h2>
           <p className="text-brand-gold text-lg mb-6">{model.location}</p>
 
@@ -92,9 +130,6 @@ const ModelDetailModal: React.FC<ModelDetailModalProps> = ({ model, onClose }) =
 
         </div>
       </div>
-       <button onClick={onClose} className="absolute top-4 right-4 text-white hover:text-brand-gold transition-colors" aria-label="Fermer">
-        <CloseIcon />
-      </button>
     </div>
   );
 };

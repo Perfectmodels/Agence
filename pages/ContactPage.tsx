@@ -1,14 +1,14 @@
-
 import React, { useState } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
 import { FacebookIcon } from '../components/icons/FacebookIcon';
 import { InstagramIcon } from '../components/icons/InstagramIcon';
 import { YoutubeIcon } from '../components/icons/YoutubeIcon';
+import { siteConfig } from '../data/configData';
 
 const socialLinks = [
-    { name: 'Facebook', href: 'https://www.facebook.com/perfectmodels.ga/', icon: <FacebookIcon /> },
-    { name: 'Instagram', href: 'https://www.instagram.com/perfectmodels.ga/', icon: <InstagramIcon /> },
-    { name: 'YouTube', href: 'https://www.youtube.com/@PMM241', icon: <YoutubeIcon /> },
+    { name: 'Facebook', href: siteConfig.socials.facebook, icon: <FacebookIcon /> },
+    { name: 'Instagram', href: siteConfig.socials.instagram, icon: <InstagramIcon /> },
+    { name: 'YouTube', href: siteConfig.socials.youtube, icon: <YoutubeIcon /> },
 ];
 
 const ContactPage: React.FC = () => {
@@ -80,9 +80,9 @@ const ContactPage: React.FC = () => {
             <div>
                  <h3 className="text-3xl font-serif text-brand-gold mb-4">Nos Coordonnées</h3>
                  <ul className="space-y-3 text-lg">
-                     <li><a href="mailto:perfectmodels.ga@gmail.com" className="hover:text-brand-gold transition-colors flex items-center gap-3"><span className="text-brand-gold">📧</span> perfectmodels.ga@gmail.com</a></li>
-                     <li><a href="tel:+241074066461" className="hover:text-brand-gold transition-colors flex items-center gap-3"><span className="text-brand-gold">📱</span> +241 074 066 461</a></li>
-                     <li className="flex items-center gap-3"><span className="text-brand-gold">📍</span> INDI HAIR, Avorbam (Libreville)</li>
+                     <li><a href={`mailto:${siteConfig.contact.email}`} className="hover:text-brand-gold transition-colors flex items-center gap-3"><span className="text-brand-gold">📧</span> {siteConfig.contact.email}</a></li>
+                     <li><a href={`tel:${siteConfig.contact.phone.replace(/\\s/g, '')}`} className="hover:text-brand-gold transition-colors flex items-center gap-3"><span className="text-brand-gold">📱</span> {siteConfig.contact.phone}</a></li>
+                     <li className="flex items-center gap-3"><span className="text-brand-gold">📍</span> {siteConfig.contact.address}</li>
                  </ul>
             </div>
              <div>

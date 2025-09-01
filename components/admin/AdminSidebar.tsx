@@ -6,12 +6,7 @@ import * as ReactRouterDOM from 'react-router-dom';
 const navLinks = [
   { path: '/admin', label: 'Dashboard', exact: true },
   { path: '/admin/models', label: 'Mannequins' },
-  { path: '/admin/media', label: 'Médiathèque' },
-  { path: '/admin/stylists', label: 'Stylistes' },
-  { path: '/admin/events', label: 'Événements' },
-  { path: '/admin/articles', label: 'Articles (Focus)' },
-  { path: '/admin/settings', label: 'Paramètres' },
-  { path: '/admin/pages', label: 'Pages (Statique)' },
+  { path: '/admin/pages', label: 'Pages' },
   { path: '/', label: 'Retour au site' },
 ];
 

@@ -1,8 +1,9 @@
 
 import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
+// FIX: Use namespace import for react-router-dom to resolve module export errors.
+import * as ReactRouterDOM from 'react-router-dom';
+import Header from './Header';
+import Footer from './components/icons/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ModelsPage from './pages/ModelsPage';
@@ -10,48 +11,55 @@ import ServicesPage from './pages/ServicesPage';
 import EventsPage from './pages/EventsPage';
 import ContactPage from './pages/ContactPage';
 import BecomeModelPage from './pages/BecomeModelPage';
+import FocusModePage from './pages/FocusModePage';
+import ArticleDetailPage from './pages/ArticleDetailPage';
 
 // Admin Pages
 import AdminLayout from './pages/admin/AdminLayout';
-import DashboardPage from './pages/admin/DashboardPage';
-import ManageModelsPage from './pages/admin/ManageModelsPage';
-import ManagePagesPage from './pages/admin/ManagePagesPage';
+
+const PublicLayout: React.FC = () => (
+  <div className="flex flex-col min-h-screen bg-brand-dark">
+    <Header />
+    <main className="flex-grow">
+      {/* FIX: Use namespace import for react-router-dom to resolve module export errors. */}
+      <ReactRouterDOM.Outlet />
+    </main>
+    <Footer />
+  </div>
+);
+
 
 const App: React.FC = () => {
   return (
-    <HashRouter>
-      <Routes>
-        {/* Admin Routes */}
-        <Route path="/admin/*" element={
-          <AdminLayout>
-            <Routes>
-              <Route index element={<DashboardPage />} />
-              <Route path="models" element={<ManageModelsPage />} />
-              <Route path="pages" element={<ManagePagesPage />} />
-            </Routes>
-          </AdminLayout>
-        } />
-
-        {/* Public Site Routes */}
-        <Route path="/*" element={
-          <div className="flex flex-col min-h-screen bg-brand-dark">
-            <Header />
-            <main className="flex-grow">
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/a-propos" element={<AboutPage />} />
-                <Route path="/mannequins" element={<ModelsPage />} />
-                <Route path="/services" element={<ServicesPage />} />
-                <Route path="/evenements" element={<EventsPage />} />
-                <Route path="/contact" element={<ContactPage />} />
-                <Route path="/devenir-mannequin" element={<BecomeModelPage />} />
-              </Routes>
-            </main>
-            <Footer />
-          </div>
-        } />
-      </Routes>
-    </HashRouter>
+    // FIX: Use namespace import for react-router-dom to resolve module export errors.
+    <ReactRouterDOM.HashRouter>
+      {/* FIX: Use namespace import for react-router-dom to resolve module export errors. */}
+      <ReactRouterDOM.Routes>
+        {/* FIX: Use namespace import for react-router-dom to resolve module export errors. */}
+        <ReactRouterDOM.Route path="/admin/*" element={<AdminLayout />} />
+        {/* FIX: Use namespace import for react-router-dom to resolve module export errors. */}
+        <ReactRouterDOM.Route path="/" element={<PublicLayout />}>
+          {/* FIX: Use namespace import for react-router-dom to resolve module export errors. */}
+          <ReactRouterDOM.Route index element={<HomePage />} />
+          {/* FIX: Use namespace import for react-router-dom to resolve module export errors. */}
+          <ReactRouterDOM.Route path="a-propos" element={<AboutPage />} />
+          {/* FIX: Use namespace import for react-router-dom to resolve module export errors. */}
+          <ReactRouterDOM.Route path="mannequins" element={<ModelsPage />} />
+          {/* FIX: Use namespace import for react-router-dom to resolve module export errors. */}
+          <ReactRouterDOM.Route path="services" element={<ServicesPage />} />
+          {/* FIX: Use namespace import for react-router-dom to resolve module export errors. */}
+          <ReactRouterDOM.Route path="evenements" element={<EventsPage />} />
+          {/* FIX: Use namespace import for react-router-dom to resolve module export errors. */}
+          <ReactRouterDOM.Route path="focus-mode-241" element={<FocusModePage />} />
+          {/* FIX: Use namespace import for react-router-dom to resolve module export errors. */}
+          <ReactRouterDOM.Route path="focus-mode-241/:articleId" element={<ArticleDetailPage />} />
+          {/* FIX: Use namespace import for react-router-dom to resolve module export errors. */}
+          <ReactRouterDOM.Route path="contact" element={<ContactPage />} />
+          {/* FIX: Use namespace import for react-router-dom to resolve module export errors. */}
+          <ReactRouterDOM.Route path="devenir-mannequin" element={<BecomeModelPage />} />
+        </ReactRouterDOM.Route>
+      </ReactRouterDOM.Routes>
+    </ReactRouterDOM.HashRouter>
   );
 };
 

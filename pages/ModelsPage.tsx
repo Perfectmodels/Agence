@@ -5,6 +5,7 @@ import ModelCard from '../components/ModelCard';
 import SectionWrapper from '../components/SectionWrapper';
 import ModelDetailModal from '../components/ModelDetailModal';
 import type { Model } from '../types';
+import AnimatedSection from '../components/AnimatedSection';
 
 type FilterType = 'Tous' | 'Femme' | 'Homme';
 
@@ -58,12 +59,13 @@ const ModelsPage: React.FC = () => {
           <FilterButton label="Homme" currentFilter={filter} setFilter={setFilter} />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {filteredModels.map((model: Model) => (
-            <ModelCard 
-              key={model.id} 
-              model={model} 
-              onClick={() => setSelectedModel(model)} 
-            />
+          {filteredModels.map((model: Model, index: number) => (
+            <AnimatedSection key={model.id} delay={ (index % 4) * 100 }>
+              <ModelCard 
+                model={model} 
+                onClick={() => setSelectedModel(model)} 
+              />
+            </AnimatedSection>
           ))}
         </div>
       </SectionWrapper>

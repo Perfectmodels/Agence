@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        /* Apply a dark overlay and the background image */
+        background-image: linear-gradient(rgba(17, 17, 17, 0.92), rgba(17, 17, 17, 0.92)), url('https://i.ibb.co/W2M0XpL/panafrican-model-background.jpg');
+        
+        /* Ensure the image covers the whole screen and stays fixed */
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+      }
+    </style>
     <script>
       tailwind.config = {
         theme: {
@@ -21,6 +33,25 @@
               'brand-gold': '#D4AF37',
               'brand-dark': '#111111',
               'brand-light': '#F5F5F5',
+            },
+            keyframes: {
+              'fade-in-down': {
+                '0%': { opacity: '0', transform: 'translateY(-20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'fade-in-up': {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'slow-zoom': {
+                '0%': { transform: 'scale(1)' },
+                '100%': { transform: 'scale(1.1)' },
+              }
+            },
+            animation: {
+              'fade-in-down': 'fade-in-down 0.8s ease-out forwards',
+              'fade-in-up': 'fade-in-up 0.8s ease-out 0.4s forwards',
+              'slow-zoom': 'slow-zoom 20s ease-in-out infinite alternate',
             }
           }
         }

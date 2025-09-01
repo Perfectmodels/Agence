@@ -2,18 +2,17 @@
 import React from 'react';
 // FIX: Use namespace import for react-router-dom to resolve module export errors.
 import * as ReactRouterDOM from 'react-router-dom';
-import { FacebookIcon } from './FacebookIcon';
-import { InstagramIcon } from './InstagramIcon';
-import { YoutubeIcon } from './YoutubeIcon';
-import { GithubIcon } from './GithubIcon';
-import { siteConfig } from '../../data/configData';
+import { FacebookIcon } from './icons/FacebookIcon';
+import { InstagramIcon } from './icons/InstagramIcon';
+import { YoutubeIcon } from './icons/YoutubeIcon';
+import { GithubIcon } from './icons/GithubIcon';
 
 const Footer: React.FC = () => {
   const socialLinks = [
-    { href: siteConfig.socials.facebook, icon: <FacebookIcon />, label: 'Facebook' },
-    { href: siteConfig.socials.instagram, icon: <InstagramIcon />, label: 'Instagram' },
-    { href: siteConfig.socials.youtube, icon: <YoutubeIcon />, label: 'YouTube' },
-    { href: siteConfig.socials.github, icon: <GithubIcon />, label: 'GitHub' },
+    { href: 'https://www.facebook.com/perfectmodels.ga/', icon: <FacebookIcon />, label: 'Facebook' },
+    { href: 'https://www.instagram.com/perfectmodels.ga/', icon: <InstagramIcon />, label: 'Instagram' },
+    { href: 'https://www.youtube.com/@PMM241', icon: <YoutubeIcon />, label: 'YouTube' },
+    { href: 'https://github.com/Perfectmodels/perfect-model-hub-website.git', icon: <GithubIcon />, label: 'GitHub' },
   ];
 
   return (
@@ -29,9 +28,9 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 uppercase tracking-wider">Contact</h3>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li>📧 {siteConfig.contact.email}</li>
-              <li>📱 {siteConfig.contact.phone}</li>
-              <li>📍 {siteConfig.contact.address}</li>
+              <li>📧 perfectmodels.ga@gmail.com</li>
+              <li>📱 +241 074066461</li>
+              <li>📍 INDI HAIR, Avorbam (Libreville)</li>
             </ul>
           </div>
           <div>
