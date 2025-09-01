@@ -1,0 +1,88 @@
+{
+  "name": "Perfect Models Management",
+  "short_name": "PMM",
+  "description": "Agence de mannequins professionnels #1 au Gabon. 80+ talents gabonais formés aux standards internationaux.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "fr-GA",
+  "categories": ["business", "lifestyle", "entertainment"],
+  "icons": [
+    {
+      "src": "/logo-pmm-new.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo-pmm-new.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/images/screenshot-mobile.png",
+      "sizes": "375x667",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Nos Mannequins",
+      "short_name": "Mannequins",
+      "description": "Découvrir nos 80+ mannequins professionnels",
+      "url": "/mannequins",
+      "icons": [
+        {
+          "src": "/logo-pmm-new.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Candidature",
+      "short_name": "Casting",
+      "description": "Rejoindre notre agence de mannequins",
+      "url": "/candidature",
+      "icons": [
+        {
+          "src": "/logo-pmm-new.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Nous contacter pour vos projets",
+      "url": "/contact",
+      "icons": [
+        {
+          "src": "/logo-pmm-new.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://perfectmodels.ga"
+    }
+  ],
+  "prefer_related_applications": false,
+  "dir": "ltr",
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7"
+}

@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://perfectmodels.ga/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow important pages
+Allow: /
+Allow: /about
+Allow: /models
+Allow: /services
+Allow: /events
+Allow: /contact
+Allow: /recruitment
+
+# Crawl delay
+Crawl-delay: 1

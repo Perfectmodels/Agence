@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
+  <channel>
+    <title>Perfect Models Management - Actualités</title>
+    <atom:link href="https://perfectmodels.ga/feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://perfectmodels.ga</link>
+    <description>Actualités de Perfect Models Management, agence de mannequins professionnels #1 au Gabon. Découvrez nos dernières nouvelles, événements et succès.</description>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <language>fr-GA</language>
+    <sy:updatePeriod>daily</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    <generator>Perfect Models Management</generator>
+    <image>
+      <url>https://perfectmodels.ga/logo-pmm-new.png</url>
+      <title>Perfect Models Management</title>
+      <link>https://perfectmodels.ga</link>
+      <width>400</width>
+      <height>400</height>
+    </image>
+    
+    <item>
+      <title>Perfect Models Management lance sa nouvelle plateforme digitale</title>
+      <link>https://perfectmodels.ga/actualites/nouvelle-plateforme-2024</link>
+      <description>Découvrez notre nouvelle plateforme digitale avec 27 mannequins professionnels gabonais. Une expérience utilisateur révolutionnaire pour l'industrie de la mode au Gabon.</description>
+      <content:encoded><![CDATA[
+        <p>Perfect Models Management est fier d'annoncer le lancement de sa nouvelle plateforme digitale, présentant nos 27 mannequins professionnels gabonais avec leurs vraies photos et profils complets.</p>
+        <p>Cette plateforme révolutionnaire offre une expérience utilisateur exceptionnelle avec des fonctionnalités avancées de recherche, filtrage par catégorie, et contact direct via WhatsApp.</p>
+        <p>Nos mannequins incluent des talents comme Ruth Mba (Miss Gabon 2021), Kendra Moussavou (spécialiste mode traditionnelle), et 25 autres professionnels formés aux standards internationaux.</p>
+      ]]></content:encoded>
+      <pubDate>Mon, 01 Jan 2024 10:00:00 +0000</pubDate>
+      <dc:creator>Perfect Models Management</dc:creator>
+      <category>Actualités</category>
+      <category>Technologie</category>
+      <category>Innovation</category>
+    </item>
+    
+    <item>
+      <title>27 mannequins professionnels gabonais rejoignent Perfect Models Management</title>
+      <link>https://perfectmodels.ga/actualites/27-nouveaux-talents-2024</link>
+      <description>Notre agence accueille 27 mannequins professionnels gabonais, incluant des talents féminins et masculins formés aux standards internationaux de l'industrie de la mode.</description>
+      <content:encoded><![CDATA[
+        <p>Perfect Models Management renforce son équipe avec l'arrivée de 27 mannequins professionnels gabonais exceptionnels.</p>
+        <p>Parmi nos nouveaux talents : Diane Vanessa, Mirabelle, Cassandra, Rosnel, Flora, Hurielle, Lesly, Noemi Kim, Patricia, et bien d'autres professionnels formés.</p>
+        <p>Chaque mannequin apporte son expertise unique : mode féminine, masculine, lifestyle, haute couture, commercial, et événementiel.</p>
+        <p>Contact : +241 77 50 79 50 ou contact@perfectmodels.ga pour vos projets.</p>
+      ]]></content:encoded>
+      <pubDate>Sun, 31 Dec 2023 15:00:00 +0000</pubDate>
+      <dc:creator>Perfect Models Management</dc:creator>
+      <category>Mannequins</category>
+      <category>Recrutement</category>
+      <category>Talents</category>
+    </item>
+    
+    <item>
+      <title>Perfect Models Management : Agence #1 au Gabon en 2024</title>
+      <link>https://perfectmodels.ga/actualites/agence-numero-1-gabon-2024</link>
+      <description>Perfect Models Management confirme sa position d'agence de mannequins #1 au Gabon avec 80+ talents professionnels et des standards internationaux reconnus.</description>
+      <content:encoded><![CDATA[
+        <p>Perfect Models Management consolide sa position d'agence de mannequins de référence au Gabon avec plus de 80 talents professionnels.</p>
+        <p>Nos services incluent : casting professionnel, formation aux standards internationaux, placement pour défilés, shooting photo, publicité et événementiel.</p>
+        <p>Basée à Libreville avec une couverture nationale, notre agence dessert tout le Gabon et l'Afrique Centrale.</p>
+        <p>Langues supportées : Français, Anglais, Espagnol pour une portée internationale.</p>
+      ]]></content:encoded>
+      <pubDate>Sat, 30 Dec 2023 12:00:00 +0000</pubDate>
+      <dc:creator>Perfect Models Management</dc:creator>
+      <category>Succès</category>
+      <category>Leadership</category>
+      <category>Gabon</category>
+    </item>
+  </channel>
+</rss>
