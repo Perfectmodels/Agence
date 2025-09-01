@@ -26,8 +26,13 @@ const Header: React.FC = () => {
     <header className="bg-black bg-opacity-80 backdrop-blur-sm sticky top-0 z-50 shadow-lg shadow-brand-gold/10">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* FIX: Use namespace import for react-router-dom to resolve module export errors. */}
-        <ReactRouterDOM.NavLink to="/" className="text-2xl font-serif font-bold text-white hover:text-brand-gold transition-colors">
-          Perfect Models
+        <ReactRouterDOM.NavLink to="/" className="flex items-center h-12">
+          <img 
+            src="/logo-pmm.png" 
+            alt="Perfect Models Management" 
+            className="h-full w-auto object-contain"
+            title="Perfect Models Management"
+          />
         </ReactRouterDOM.NavLink>
         <nav className="hidden md:flex space-x-8 items-center">
           {navLinks.map((link) => {

@@ -156,10 +156,33 @@ const PerfectFashionDay: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
+      {/* Hero Section with Official Poster */}
+      <div className="relative bg-black">
+        <div className="max-w-4xl mx-auto px-4 py-12 sm:py-16">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Perfect Fashion Day</h1>
+            <p className="text-xl text-brand-gold">1ère Édition - Découvrez l'excellence de la mode africaine</p>
+          </div>
+          <div className="relative rounded-lg overflow-hidden shadow-2xl max-w-3xl mx-auto">
+            <img 
+              src="/events/perfect-fashion-day/affiche-officielle.png" 
+              alt="Affiche Officielle - Perfect Fashion Day" 
+              className="w-full h-auto object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+              <div className="text-white">
+                <h2 className="text-2xl font-bold mb-2">L'Événement de l'Année</h2>
+                <p className="text-gray-200">Une célébration de la créativité et du style africain</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <SectionWrapper
-        title="Perfect Fashion Day"
+        title="Nos Stylistes Participants"
         subtitle="Découvrez les créations exceptionnelles de nos stylistes participants"
-        className="bg-white"
+        className="bg-white pt-12"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
           {stylists.map((stylist, index) => (

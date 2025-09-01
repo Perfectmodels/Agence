@@ -29,14 +29,21 @@ const HomePage: React.FC = () => {
             alt="Fashion background" 
             className="w-full h-full object-cover object-center opacity-30 scale-110 animate-slow-zoom"
           />
-           <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-brand-dark/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-brand-dark/50"></div>
         </div>
-        <div className="relative z-10 p-6">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold animate-fade-in-down">
-            Perfect Models <span className="text-brand-gold">Management</span>
+        <div className="relative z-10 p-6 w-full max-w-6xl mx-auto">
+          <div className="mb-8 animate-fade-in-down">
+            <img 
+              src="/logo-pmm.png" 
+              alt="Perfect Models Management" 
+              className="h-24 md:h-32 mx-auto mb-6"
+            />
+          </div>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 animate-fade-in-down">
+            L'Excellence de la Mode <span className="text-brand-gold">Gabonaise</span>
           </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-gray-300 animate-fade-in-up">
-            L'excellence et la discipline au service de la mode gabonaise. Nous façonnons les icônes de demain.
+          <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 mb-8 animate-fade-in-up">
+            Agence de mannequins professionnels, formant les talents de demain avec discipline et passion.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 animate-fade-in-up">
             {/* FIX: Use namespace import for react-router-dom to resolve module export errors. */}
