@@ -25,7 +25,7 @@ const HomePage: React.FC = () => {
       <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center text-center bg-black overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://i.ibb.co/b5LgVZg/DSC-0090.jpg" 
+            src="background (1).jpg" 
             alt="Fashion background" 
             className="w-full h-full object-cover object-center opacity-30 scale-110 animate-slow-zoom"
           />

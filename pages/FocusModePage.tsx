@@ -1,9 +1,9 @@
-
 import React from 'react';
 // FIX: Use namespace import for react-router-dom to resolve module export errors.
 import * as ReactRouterDOM from 'react-router-dom';
 import { articles } from '../data/articlesData';
 import SectionWrapper from '../components/SectionWrapper';
+import BackgroundSlideshow from '../components/BackgroundSlideshow';
 
 const ArticleCard: React.FC<{ article: typeof articles[0] }> = ({ article }) => {
     const formattedDate = new Date(article.publishedDate).toLocaleDateString('fr-FR', {
@@ -33,9 +33,11 @@ const FocusModePage: React.FC = () => {
 
   return (
     <>
+      <BackgroundSlideshow />
       <SectionWrapper
         title="Focus Mode 241"
         subtitle="Le magazine de Perfect Models Management. Plongez dans les coulisses de la mode, découvrez nos talents et explorez les tendances qui façonnent l'industrie."
+        className="relative z-10"
       >
         {/* Featured Article */}
         <div className="mb-16">
