@@ -1,0 +1,22 @@
+.background-slide {
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide-text {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.slide-text.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.slide-text.hidden {
+  transform: translateY(2rem);
+  opacity: 0;
+}

@@ -1,7 +1,7 @@
-
 import React from 'react';
 // FIX: Use namespace import for react-router-dom to resolve module export errors.
 import * as ReactRouterDOM from 'react-router-dom';
+import { ModelsProvider } from './contexts/ModelsContext';
 import Header from './Header';
 import Footer from './components/icons/Footer';
 import HomePage from './pages/HomePage';
@@ -32,6 +32,7 @@ const PublicLayout: React.FC = () => (
 const App: React.FC = () => {
   return (
     // FIX: Use namespace import for react-router-dom to resolve module export errors.
+    <ModelsProvider>
     <ReactRouterDOM.HashRouter>
       {/* FIX: Use namespace import for react-router-dom to resolve module export errors. */}
       <ReactRouterDOM.Routes>
@@ -60,6 +61,7 @@ const App: React.FC = () => {
         </ReactRouterDOM.Route>
       </ReactRouterDOM.Routes>
     </ReactRouterDOM.HashRouter>
+    </ModelsProvider>
   );
 };
 

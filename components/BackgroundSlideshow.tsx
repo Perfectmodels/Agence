@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './BackgroundSlideshow.css';
 
 interface Slide {
   image: string;
@@ -49,18 +50,11 @@ const BackgroundSlideshow: React.FC = () => {
         {slides.map((slide, index) => (
           <div 
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
-            style={{
-              backgroundImage: `url(${slide.image})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-            }}
+            className={`background-slide absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
+            style={{ '--bg-image': `url(${slide.image})` } as React.CSSProperties}
           >
             <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-              <h1 className="text-5xl md:text-7xl text-white font-bold text-center px-4 transform transition-all duration-1000 
-                           ${index === currentSlide ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}"
-                  style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+              <h1 className={`slide-text text-5xl md:text-7xl text-white font-bold text-center px-4 ${index === currentSlide ? 'visible' : 'hidden'}`}>
                 {slide.text}
               </h1>
             </div>
