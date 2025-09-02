@@ -2,12 +2,18 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="${csp}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfect Models Management</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/src/styles.css">
+    <link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <style>
       body {
         /* Apply a dark overlay and the background image */
@@ -20,52 +26,18 @@
         background-repeat: no-repeat;
       }
     </style>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              'sans': ['Inter', 'sans-serif'],
-              'serif': ['Playfair Display', 'serif'],
-            },
-            colors: {
-              'brand-gold': '#D4AF37',
-              'brand-dark': '#111111',
-              'brand-light': '#F5F5F5',
-            },
-            keyframes: {
-              'fade-in-down': {
-                '0%': { opacity: '0', transform: 'translateY(-20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              'fade-in-up': {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              'slow-zoom': {
-                '0%': { transform: 'scale(1)' },
-                '100%': { transform: 'scale(1.1)' },
-              }
-            },
-            animation: {
-              'fade-in-down': 'fade-in-down 0.8s ease-out forwards',
-              'fade-in-up': 'fade-in-up 0.8s ease-out 0.4s forwards',
-              'slow-zoom': 'slow-zoom 20s ease-in-out infinite alternate',
-            }
-          }
-        }
+    <!-- Removed inline Tailwind config as it's now in tailwind.config.js -->
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "./node_modules/react/umd/react.production.min.js",
+        "react-dom": "./node_modules/react-dom/umd/react-dom.production.min.js",
+        "react-dom/": "./node_modules/react-dom/",
+        "react-router-dom": "./node_modules/react-router-dom/",
+        "@supabase/supabase-js": "./node_modules/@supabase/supabase-js/dist/module/index.js"
       }
+    }
     </script>
-<script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
-    "react/": "https://aistudiocdn.com/react@^19.1.1/",
-    "react": "https://aistudiocdn.com/react@^19.1.1",
-    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.8.2"
-  }
-}
-</script>
 </head>
 <body class="bg-brand-dark text-brand-light font-sans">
     <div id="root"></div>
